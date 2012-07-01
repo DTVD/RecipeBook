@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B42F2125159B179C00EA523B /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42F2124159B179C00EA523B /* AboutViewController.m */; };
+		B42F2129159B1D7A00EA523B /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = B42F2127159B1D7A00EA523B /* about.html */; };
+		B42F212B159B1E0500EA523B /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = B42F212A159B1E0500EA523B /* about.png */; };
+		B42F2144159B7B8200EA523B /* Steve.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B42F2141159B7B8200EA523B /* Steve.jpg */; };
+		B42F2145159B7B8200EA523B /* Mark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B42F2142159B7B8200EA523B /* Mark.jpg */; };
+		B42F2146159B7B8200EA523B /* Obama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B42F2143159B7B8200EA523B /* Obama.jpg */; };
+		B42F214B159B7B8D00EA523B /* Mark.html in Resources */ = {isa = PBXBuildFile; fileRef = B42F2148159B7B8D00EA523B /* Mark.html */; };
+		B42F214C159B7B8D00EA523B /* Steve.html in Resources */ = {isa = PBXBuildFile; fileRef = B42F2149159B7B8D00EA523B /* Steve.html */; };
+		B42F214D159B7B8D00EA523B /* Obama.html in Resources */ = {isa = PBXBuildFile; fileRef = B42F214A159B7B8D00EA523B /* Obama.html */; };
 		B45910E81591845B00BB3B67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B45910E71591845B00BB3B67 /* UIKit.framework */; };
 		B45910EA1591845B00BB3B67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B45910E91591845B00BB3B67 /* Foundation.framework */; };
 		B45910EC1591845B00BB3B67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B45910EB1591845B00BB3B67 /* CoreGraphics.framework */; };
@@ -15,22 +24,35 @@
 		B45910F81591845B00BB3B67 /* RecipeBookAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B45910F71591845B00BB3B67 /* RecipeBookAppDelegate.m */; };
 		B45910FB1591845B00BB3B67 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45910F91591845B00BB3B67 /* MainStoryboard.storyboard */; };
 		B45910FE1591845B00BB3B67 /* RecipeBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45910FD1591845B00BB3B67 /* RecipeBookViewController.m */; };
+		B487DD4E15986174005ABC36 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B487DD4D15986174005ABC36 /* RecipeDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B42F2123159B179C00EA523B /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		B42F2124159B179C00EA523B /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		B42F2127159B1D7A00EA523B /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		B42F212A159B1E0500EA523B /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		B42F2141159B7B8200EA523B /* Steve.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Steve.jpg; sourceTree = "<group>"; };
+		B42F2142159B7B8200EA523B /* Mark.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mark.jpg; sourceTree = "<group>"; };
+		B42F2143159B7B8200EA523B /* Obama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Obama.jpg; sourceTree = "<group>"; };
+		B42F2148159B7B8D00EA523B /* Mark.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Mark.html; sourceTree = "<group>"; };
+		B42F2149159B7B8D00EA523B /* Steve.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Steve.html; sourceTree = "<group>"; };
+		B42F214A159B7B8D00EA523B /* Obama.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Obama.html; sourceTree = "<group>"; };
 		B45910E31591845B00BB3B67 /* RecipeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45910E71591845B00BB3B67 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B45910E91591845B00BB3B67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B45910EB1591845B00BB3B67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B45910EF1591845B00BB3B67 /* RecipeBook-Info.plist */ = {isa = PBXFileReference; path = "RecipeBook-Info.plist"; sourceTree = "<group>"; };
+		B45910EF1591845B00BB3B67 /* RecipeBook-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RecipeBook-Info.plist"; sourceTree = "<group>"; };
 		B45910F11591845B00BB3B67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B45910F31591845B00BB3B67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B45910F51591845B00BB3B67 /* RecipeBook-Prefix.pch */ = {isa = PBXFileReference; path = "RecipeBook-Prefix.pch"; sourceTree = "<group>"; };
-		B45910F61591845B00BB3B67 /* RecipeBookAppDelegate.h */ = {isa = PBXFileReference; path = RecipeBookAppDelegate.h; sourceTree = "<group>"; };
+		B45910F51591845B00BB3B67 /* RecipeBook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RecipeBook-Prefix.pch"; sourceTree = "<group>"; };
+		B45910F61591845B00BB3B67 /* RecipeBookAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeBookAppDelegate.h; sourceTree = "<group>"; };
 		B45910F71591845B00BB3B67 /* RecipeBookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeBookAppDelegate.m; sourceTree = "<group>"; };
 		B45910FA1591845B00BB3B67 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		B45910FC1591845B00BB3B67 /* RecipeBookViewController.h */ = {isa = PBXFileReference; path = RecipeBookViewController.h; sourceTree = "<group>"; };
+		B45910FC1591845B00BB3B67 /* RecipeBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeBookViewController.h; sourceTree = "<group>"; };
 		B45910FD1591845B00BB3B67 /* RecipeBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeBookViewController.m; sourceTree = "<group>"; };
+		B487DD4C15986174005ABC36 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
+		B487DD4D15986174005ABC36 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +72,14 @@
 		B45910D81591845B00BB3B67 = {
 			isa = PBXGroup;
 			children = (
+				B42F2148159B7B8D00EA523B /* Mark.html */,
+				B42F2149159B7B8D00EA523B /* Steve.html */,
+				B42F214A159B7B8D00EA523B /* Obama.html */,
+				B42F2141159B7B8200EA523B /* Steve.jpg */,
+				B42F2142159B7B8200EA523B /* Mark.jpg */,
+				B42F2143159B7B8200EA523B /* Obama.jpg */,
+				B42F212A159B1E0500EA523B /* about.png */,
+				B42F2127159B1D7A00EA523B /* about.html */,
 				B45910ED1591845B00BB3B67 /* RecipeBook */,
 				B45910E61591845B00BB3B67 /* Frameworks */,
 				B45910E41591845B00BB3B67 /* Products */,
@@ -83,6 +113,10 @@
 				B45910FC1591845B00BB3B67 /* RecipeBookViewController.h */,
 				B45910FD1591845B00BB3B67 /* RecipeBookViewController.m */,
 				B45910EE1591845B00BB3B67 /* Supporting Files */,
+				B487DD4C15986174005ABC36 /* RecipeDetailViewController.h */,
+				B487DD4D15986174005ABC36 /* RecipeDetailViewController.m */,
+				B42F2123159B179C00EA523B /* AboutViewController.h */,
+				B42F2124159B179C00EA523B /* AboutViewController.m */,
 			);
 			path = RecipeBook;
 			sourceTree = "<group>";
@@ -150,6 +184,14 @@
 			files = (
 				B45910F21591845B00BB3B67 /* InfoPlist.strings in Resources */,
 				B45910FB1591845B00BB3B67 /* MainStoryboard.storyboard in Resources */,
+				B42F2129159B1D7A00EA523B /* about.html in Resources */,
+				B42F212B159B1E0500EA523B /* about.png in Resources */,
+				B42F2144159B7B8200EA523B /* Steve.jpg in Resources */,
+				B42F2145159B7B8200EA523B /* Mark.jpg in Resources */,
+				B42F2146159B7B8200EA523B /* Obama.jpg in Resources */,
+				B42F214B159B7B8D00EA523B /* Mark.html in Resources */,
+				B42F214C159B7B8D00EA523B /* Steve.html in Resources */,
+				B42F214D159B7B8D00EA523B /* Obama.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +205,8 @@
 				B45910F41591845B00BB3B67 /* main.m in Sources */,
 				B45910F81591845B00BB3B67 /* RecipeBookAppDelegate.m in Sources */,
 				B45910FE1591845B00BB3B67 /* RecipeBookViewController.m in Sources */,
+				B487DD4E15986174005ABC36 /* RecipeDetailViewController.m in Sources */,
+				B42F2125159B179C00EA523B /* AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +318,7 @@
 				B45911031591845B00BB3B67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

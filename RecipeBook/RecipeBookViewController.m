@@ -7,8 +7,13 @@
 //
 
 #import "RecipeBookViewController.h"
+#import "RecipeDetailViewController.h"
 
-@implementation RecipeBookViewController
+@implementation RecipeBookViewController{
+    NSArray *recipes;
+}
+
+@synthesize tableViewNM;
 
 - (void)didReceiveMemoryWarning
 {
@@ -22,6 +27,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    recipes = [NSArray arrayWithObjects:@"Obama", @"Mark Zuckerberg", @"Steve Jobs", nil];
+    
 }
 
 - (void)viewDidUnload
@@ -55,6 +62,31 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [recipes count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifire = @"RecipeCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifire];
+    
+    if (cell == nil){
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifire];
+    }
+    cell.textLabel.text = [recipes objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showRecipeDetail"]){
+        NSIndexPath *indexPath = [self.tableViewNM indexPathForSelectedRow];
+        RecipeDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.recipeName = [recipes objectAtIndex:indexPath.row];
+    }
 }
 
 @end
