@@ -11,6 +11,7 @@
 
 @implementation RecipeBookViewController{
     NSArray *recipes;
+    NSArray *searchResults;
 }
 
 @synthesize tableViewNM;
@@ -63,6 +64,8 @@
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
+
+/*
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [recipes count];
@@ -79,14 +82,66 @@
     cell.textLabel.text = [recipes objectAtIndex:indexPath.row];
     return cell;
 }
+*/
 
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [searchResults count];
+        
+    } else {
+        return [recipes count];
+        
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"RecipeCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        cell.textLabel.text = [searchResults objectAtIndex:indexPath.row];
+    } else {
+        cell.textLabel.text = [recipes objectAtIndex:indexPath.row];
+    }
+    
+    return cell;
+}
+ 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"showRecipeDetail"]){
         NSIndexPath *indexPath = [self.tableViewNM indexPathForSelectedRow];
         RecipeDetailViewController *destViewController = segue.destinationViewController;
         destViewController.recipeName = [recipes objectAtIndex:indexPath.row];
+        
+        //HIde bottom Tab bar
+        destViewController.hidesBottomBarWhenPushed = YES;
     }
+}
+
+- (void)filterContentForSearchText:(NSString *)searchText scope:(NSString *)scope{
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@",searchText];
+    searchResults = [recipes filteredArrayUsingPredicate:resultPredicate];
+}
+
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller 
+shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString 
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    
+    return YES;
 }
 
 @end

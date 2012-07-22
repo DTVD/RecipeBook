@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Y3b-uG-UK8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Y3b-uG-UK8">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
+        <!--Recipe Book View Controller - World's Handsome Guys-->
         <scene sceneID="5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -17,9 +19,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="bPd-gz-dd0">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="2" id="DAW-fD-RKW"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeCell" id="G0U-zX-WOc">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="80" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -41,12 +51,23 @@
                     </view>
                     <navigationItem key="navigationItem" title="World's Handsome Guys" id="Oyg-ha-rlN"/>
                     <connections>
+                        <outlet property="searchDisplayController" destination="6PS-ck-hFI" id="92c-PR-BJt"/>
                         <outlet property="tableViewNM" destination="d3u-2m-pgF" id="yGI-0U-88P"/>
                     </connections>
                 </viewController>
+                <searchDisplayController id="6PS-ck-hFI">
+                    <connections>
+                        <outlet property="delegate" destination="2" id="nAH-Wl-Bus"/>
+                        <outlet property="searchBar" destination="bPd-gz-dd0" id="GDy-GN-zea"/>
+                        <outlet property="searchContentsController" destination="2" id="kJ9-Vh-rWA"/>
+                        <outlet property="searchResultsDataSource" destination="2" id="8Qw-XE-Y1Q"/>
+                        <outlet property="searchResultsDelegate" destination="2" id="vtZ-js-EI6"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1370" y="167"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="VMZ-iI-c2W">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vlC-ky-cCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -62,6 +83,7 @@
             </objects>
             <point key="canvasLocation" x="844" y="769"/>
         </scene>
+        <!--About View Controller - Actually most handsome guy-->
         <scene sceneID="mS5-Pc-nGR">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPY-S8-BEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -86,6 +108,7 @@
             </objects>
             <point key="canvasLocation" x="1362" y="769"/>
         </scene>
+        <!--Recipe Detail View Controller-->
         <scene sceneID="Fb3-hY-rON">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXe-of-lbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -118,6 +141,7 @@
             </objects>
             <point key="canvasLocation" x="1781" y="167"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="b43-Wr-cjZ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5b-HE-nRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -136,6 +160,7 @@
             </objects>
             <point key="canvasLocation" x="844" y="167"/>
         </scene>
+        <!--Tab Bar Controller-->
         <scene sceneID="sEE-DG-zCH">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEo-Sl-n0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -154,27 +179,6 @@
             <point key="canvasLocation" x="158" y="247"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AboutViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="RecipeBookViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecipeBookViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableViewNM" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="RecipeDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecipeDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="recipeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
