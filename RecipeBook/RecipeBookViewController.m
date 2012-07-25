@@ -29,14 +29,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     recipes = [NSArray arrayWithObjects:@"Obama", @"Mark Zuckerberg", @"Steve Jobs", nil];
-    
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    // e.g. self.myOutlet = nil;f
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -114,15 +113,29 @@
     
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        [self performSegueWithIdentifier:@"showRecipeDetail" sender:self];
+    }
+}
  
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"showRecipeDetail"]){
-        NSIndexPath *indexPath = [self.tableViewNM indexPathForSelectedRow];
+        NSIndexPath *indexPath = nil;
         RecipeDetailViewController *destViewController = segue.destinationViewController;
-        destViewController.recipeName = [recipes objectAtIndex:indexPath.row];
         
-        //HIde bottom Tab bar
+        if ([self.searchDisplayController isActive]){
+            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            destViewController.recipeName = [searchResults objectAtIndex:indexPath.row];
+        } else {
+            indexPath = [self.tableViewNM indexPathForSelectedRow];
+            destViewController.recipeName = [recipes objectAtIndex:indexPath.row];            
+        }
+        
+        //Hide bottom Tab bar
         destViewController.hidesBottomBarWhenPushed = YES;
     }
 }
